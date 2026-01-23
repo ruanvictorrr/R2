@@ -664,6 +664,38 @@
       box-shadow: 0 14px 26px rgba(0,0,0,.12);
     }
 
+    /* === Floating no mobile: só ícones === */
+.btn-label{ display: inline; }
+
+@media (max-width: 560px){
+  .float-stack{
+    right: 12px;
+    bottom: 12px;
+    gap: 10px;
+  }
+
+  .float-stack .btn{
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border-radius: 16px;
+    justify-content: center;
+  }
+
+  .float-stack .btn .btn-label{ display: none; }
+
+  .float-stack .btn .ico{
+    width: 22px;
+    height: 22px;
+  }
+  .float-stack .btn .ico svg{
+    width: 22px;
+    height: 22px;
+  }
+}
+
+    
+    
 
 /* Hover premium em TODOS os cards (igual Serviços) */
 .card,
@@ -738,9 +770,6 @@ details:hover::after,
   from { transform: translateX(-70%); }
   to   { transform: translateX(70%); }
 }
-
-to   { transform: translateX(70%); }
-
     /* =========================
        SOBRE (HISTÓRIA DA R2)
     ========================= */
@@ -1223,13 +1252,6 @@ to   { transform: translateX(70%); }
       <div class="split split-top">
         <div class="about-story">
 
-          <!--<div class="pills" aria-label="Destaques da história">
-            <span class="pill"><b>+15 anos</b> de experiência</span>
-            <span class="pill"><b>PE</b> matriz • apoio em <b>PB/RN</b></span>
-            <span class="pill"><b>24h</b> de monitoramento</span>
-            <span class="pill"><b>Nordeste</b> como foco</span>
-          </div>-->
-
           <div class="card">
             <h3>Nossa história</h3>
             <p>
@@ -1669,33 +1691,34 @@ to   { transform: translateX(70%); }
 
   <!-- Floating: Instagram (com seta) + WhatsApp (com ícone) -->
   <div class="float-stack" aria-label="Atalhos flutuantes">
-    <a class="btn btn-instagram"
-       href="https://www.instagram.com/r2transporteelogistica"
-       target="_blank" rel="noopener"
-       aria-label="Abrir Instagram">
-      <span class="ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-          <circle cx="12" cy="12" r="4"></circle>
-          <circle cx="17" cy="7" r="1"></circle>
-        </svg>
-      </span>
-      Instagram →
-    </a>
+  <a class="btn btn-instagram"
+     href="https://www.instagram.com/r2transporteelogistica"
+     target="_blank" rel="noopener"
+     aria-label="Abrir Instagram">
+    <span class="ico" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17" cy="7" r="1"></circle>
+      </svg>
+    </span>
+  <span class="btn-label">Instagram →</span>
+  </a>
 
-    <a class="btn btn-whatsapp"
-       href="https://wa.me/5581983431568?text=Ol%C3%A1!%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20de%20transporte%20para%20minha%20empresa.%0A%0AOrigem:%20____%0ADestino:%20____%0ATipo%20de%20carga:%20____%0APeso/Volume:%20____%0AFrequ%C3%AAncia:%20____%0APrazo%20desejado:%20____"
-       target="_blank" rel="noopener"
-       aria-label="Abrir WhatsApp">
-      <span class="ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.8-1.2A9 9 0 1 0 12 3z"/>
-          <path d="M9.7 8.7c.2-.5.4-.6.8-.6h.6c.2 0 .5 0 .7.4l.9 2c.1.3.1.6-.1.8l-.4.5c-.2.2-.1.5 0 .7.4.8 1.3 1.7 2.1 2.1.2.1.5.2.7 0l.5-.4c.2-.2.5-.2.8-.1l2 .9c.4.2.4.5.4.7v.6c0 .4-.1.6-.6.8-.5.2-1.7.4-3.4-.3-2.3-1-3.9-3.4-4-3.6-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2.1 1-2.4z"/>
-        </svg>
-      </span>
-      WhatsApp →
-    </a>
-  </div>
+  <a class="btn btn-whatsapp"
+     href="https://wa.me/5581983431568?text=Ol%C3%A1!%20Gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20de%20transporte%20para%20minha%20empresa.%0A%0AOrigem:%20____%0ADestino:%20____%0ATipo%20de%20carga:%20____%0APeso/Volume:%20____%0AFrequ%C3%AAncia:%20____%0APrazo%20desejado:%20____"
+     target="_blank" rel="noopener"
+     aria-label="Abrir WhatsApp">
+    <span class="ico" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3a9 9 0 0 0-7.8 13.4L3 21l4.8-1.2A9 9 0 1 0 12 3z"/>
+        <path d="M9.7 8.7c.2-.5.4-.6.8-.6h.6c.2 0 .5 0 .7.4l.9 2c.1.3.1.6-.1.8l-.4.5c-.2.2-.1.5 0 .7.4.8 1.3 1.7 2.1 2.1.2.1.5.2.7 0l.5-.4c.2-.2.5-.2.8-.1l2 .9c.4.2.4.5.4.7v.6c0 .4-.1.6-.6.8-.5.2-1.7.4-3.4-.3-2.3-1-3.9-3.4-4-3.6-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2.1 1-2.4z"/>
+      </svg>
+    </span>
+    <span class="btn-label">WhatsApp →</span>
+  </a>
+</div>
+
 
   <script>
     const WA_NUMBER = "5581983431568";
